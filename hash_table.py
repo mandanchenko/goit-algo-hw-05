@@ -36,10 +36,10 @@ class HashTable:
             for index in range(len(self.table[key_hash])):
                 if self.table[key_hash][index][0] == key:
                     return self.table[key_hash].pop(index)
-        return 'Not found'
+        return "Not found"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Тестуємо нашу хеш-таблицю:
     H = HashTable(7)
     H.insert("Harry", 150)
@@ -56,9 +56,8 @@ if __name__ == '__main__':
     H.insert("Luna", 125)
     H.insert("Nevil", 110)
     print(H.table)
-    print(H.delete("Albus"))   
-    print(H.delete("Igor")) 
+    print(H.delete("Albus"))
+    print(H.delete("Igor"))
     print(H.delete("Jorje"))
     print(H.delete("Lucius"))
     print(H.table)
-    
