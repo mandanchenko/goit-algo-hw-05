@@ -29,25 +29,17 @@ def rabin_karp_search(main_string, substring):
     # Проходимо крізь основний рядок
     for i in range(main_string_length - substring_length + 1):
         if substring_hash == current_slice_hash:
-            if main_string[i:i + substring_length] == substring:
+            if main_string[i : i + substring_length] == substring:
                 return i
 
         if i < main_string_length - substring_length:
-            current_slice_hash = (current_slice_hash - ord(main_string[i]) * h_multiplier) % modulus
-            current_slice_hash = (current_slice_hash * base + ord(main_string[i + substring_length])) % modulus
+            current_slice_hash = (
+                current_slice_hash - ord(main_string[i]) * h_multiplier
+            ) % modulus
+            current_slice_hash = (
+                current_slice_hash * base + ord(main_string[i + substring_length])
+            ) % modulus
             if current_slice_hash < 0:
                 current_slice_hash += modulus
 
     return -1
-
-
-if __name__ == '__main__':
-
-    main_string = "Being a developer is not easy"
-    substring = "developer is not easy"
-
-    position = rabin_karp_search(main_string, substring)
-    if position != -1:
-        print(f"Substring found at index {position}")
-    else:
-        print("Substring not found")

@@ -40,10 +40,3 @@ def kmp_search(main_string, pattern):
             return i - j
 
     return -1  # якщо підрядок не знайдено
-
-
-if __name__ == '__main__':
-    main_string = "ABABDABACDABABCABAB"
-    pattern = "ABABCABAB"
-
-    print(kmp_search(main_string, pattern))

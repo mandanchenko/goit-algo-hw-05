@@ -33,19 +33,3 @@ def boyer_moore_search(text, pattern):
 
     # Якщо підрядок не знайдено, повертаємо -1
     return -1
-
-
-if __name__ == '__main__':
-
-    # text = "Being a developer is not easy"
-    # pattern = "developer"
-    text = "ABABDABACDABABCABAB"
-    pattern = "ABABCABAB"
-    shift_table = build_shift_table(pattern)
-    print(shift_table)
-
-    position = boyer_moore_search(text, pattern)
-    if position != -1:
-        print(f"Substring found at index {position}")
-    else:
-        print("Substring not found")
